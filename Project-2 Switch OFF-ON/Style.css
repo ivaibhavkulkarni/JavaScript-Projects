@@ -1,57 +1,49 @@
-.dark-background{
+.black-background{
     background-color: black;
 }
+
 
 .bulb-image{
     width: 150px;
 }
 
 .cat-image{
-    width: 300px;
+    width: 200px;
 }
 
 
-.switch-board{
-    background-color: darkgray;
+.switch_heading{
+    font-size: 30px;
+}
+.switch-container{
+    background-color: lightgray;
     width: 350px;
-    height: 110px;
     border-radius: 12px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 5px;
-    padding-left: 5px;
-    margin: 15px;
+    height: 110px;
+    color: aliceblue;
+    padding: 8px;
 }
 
-.switch-board-content{
-    font-family:Arial, Helvetica, sans-serif;
-    color: aliceblue;
-    font-weight: 500;
-    font-size: 25px;
-    margin-bottom: 24px;
-
-}
-
-.On-button{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: aliceblue;
-    background-color: #cbd2d9;
-    font-weight: bold;
-    border-radius: 8px;
-    width: 99px;
-    height: 44px;
-    font-size: 25px;
-
-}
-
-.Off-button{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: aliceblue;
+.off-button{
     background-color: red;
-    font-weight: bold;
-    border-radius: 8px;
-    width: 99px;
-    height: 44px;
-    font-size: 25px;
+    width: 80px;
+    border-radius: 12px;
+    border-width: 0px;
+    color: aliceblue;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 
+.on-button{
+    background-color: rgb(133, 133, 133);
+    width: 80px;
+    border-radius: 12px;
+    border-width: 0px;
+    color:aliceblue;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
