@@ -1,0 +1,29 @@
+.transparent{
+    background-color: transparent;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 400px;
+    height: 300px;
+}
+
+.padding{
+    padding:15%;
+}
+
+.heading{
+    font-size: 50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 1000;
+}
+
+.numbers{
+    font-size: 75px;
+    font-weight: 700;
+}
+
+.button{
+    border-radius: 12px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 5px;
+    margin: 8px;
+}
