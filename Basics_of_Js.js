@@ -27,3 +27,16 @@ function onIncrement(){
     //code
 
 } 
+
+
+// To print random number we Math.random()
+randon_num = Math.random();
+
+// To print random number upto 100
+random_number = Math.random() * 100;
+
+// To print nearest random num 
+final_number = Math.ceil(random_number)
+
+
+
