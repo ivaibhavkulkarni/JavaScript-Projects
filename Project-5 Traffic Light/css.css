@@ -1,0 +1,27 @@
+.traffic-light-container{
+    background-color: #86d2f2;
+}
+
+.Traffic-light{
+    background-color: #1f1d41;
+    height: 300px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.bulb{
+    height: 50px;
+    width: 50px;
+    border-radius: 70px;
+    background-color: #4b5069;
+    margin: 25px;
+    margin-top: 38px;
+}
+
+.btns{
+    background-color: #1f1d41;
+    height: 50px;
+    width: 70px;
+    color: aliceblue;
+    border-radius: 15px;
+}
