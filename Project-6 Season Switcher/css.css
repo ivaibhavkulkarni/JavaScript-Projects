@@ -1,0 +1,30 @@
+.season-image{
+    height: 85vh;
+    width: 100%;
+}
+
+.button{
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 80px;
+    height: 32px;
+    border-width: 0px;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
+.button1{
+    background-color: #3a7333;
+}
+
+.button2{
+    background-color: #e0bb00;
+}
+
+.button3{
+    background-color: #b04400;
+}
+
+.button4{
+    background-color: #0f7cb6;
+}
