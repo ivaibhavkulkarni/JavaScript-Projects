@@ -40,3 +40,41 @@ final_number = Math.ceil(random_number)
 
 
 
+// Arrays and Objects
+//Adding values in the Array 
+let myArray = [5,"Six",7,8];
+//length 
+
+len = myArray.length;
+
+// Push 
+
+myArray.push(6);
+
+// Pop
+
+myArray.pop();
+
+
+// function declaration 
+
+function showMessage(){
+    console.log("hello");
+}
+
+showMessage();
+
+
+// function expression 
+
+
+let showMessages = function(){
+    console.log("hello");
+};
+showMessages();
+
+
+
+
+
+
