@@ -11,16 +11,16 @@
     <div class="col-12 text-center">
         <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/sum-of-two-numbers-img.png" class="image">
         <div class="bg-container">
-            <span class="number m-2"></span>
-            <span class="operator m-2"></span>
-            <span class="number m-2"></span>
+            <span class="number m-2" id="firstNumber"></span>
+            <span class="operator m-2" id="operatorS"></span>
+            <span class="number m-2" id="secondNumber"></span>
             <span class="operator">=</span>
-            <input class="user-input" type="text"/>
+            <input class="user-input" type="text" id="userInput"/>
             <div class="mt-4">
-                <button class="btn btn-primary mb-4 m-2">Check</button>
-                <button class="btn btn-primary mb-4 m-2">Restart</button>
+                <button class="btn btn-primary mb-4 m-2" onclick="checkResult()">Check</button>
+                <button class="btn btn-primary mb-4 m-2" onclick="restartGame()">Restart</button>
             </div>
-            <p class="game-result"></p>
+            <p class="game-result" id="gameResult"></p>
         </div>
     </div> 
 
