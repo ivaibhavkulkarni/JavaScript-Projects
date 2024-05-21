@@ -16,6 +16,7 @@ function restartGame(){
     secondNumber.textContent = secondNumber2;
     operators.textContent = selectedoperatorS;
     userInput.value = "";
+    gameResult.textContent = "";
 
 }
 
