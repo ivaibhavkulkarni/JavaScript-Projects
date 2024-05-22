@@ -1,0 +1,46 @@
+.todo-bg-container{
+    background-color: #f9fbfe;
+    height: 100vh;
+}
+
+.todo-heading{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+h1{
+    font-family: "Lucida Handwriting";
+}
+
+
+.font-weight{
+    font-weight: 10;
+}
+
+
+.user-input{
+    background-color: white;
+    width: 100%;
+    border-style: solid;
+    border-width:1px;
+    border-color: #e4e7eb;
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+.todo-button{
+    color: white;
+    background-color: #4c63b6;
+    border-radius: 10px;
+    border-width: 0px;
+    border-color: #4c63b6;
+    padding-left: 38px;
+    padding-right: 38px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
