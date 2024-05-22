@@ -26,3 +26,31 @@ removeStyle.onclick = function(){
 };
 
 containerElement.appendChild(removeStyle);
+
+
+// Creating Checkbox
+
+let inputElement = document.createElement("input");
+inputElement.type = "checkbox";
+inputElement.id = "myCheckBox";
+document.body.appendChild(inputElement);
+
+// Adding label
+
+let labelElement = document.createElement("label");
+labelElement.htmlFor = "myCheckBox";
+labelElement.textContent = "Are you Vaibhav kulkarni ?";
+document.body.appendChild(labelElement);
+
+
+// An other way of adding label
+let inputElement1 = document.createElement("input");
+inputElement1.type = "checkbox";
+inputElement1.id = "myCheckBox2";
+document.body.appendChild(inputElement1);
+
+
+let labelElement1 = document.createElement("label");
+labelElement1.setAttribute("for","myCheckBox2");
+labelElement1.textContent = "male";
+document.body.appendChild(labelElement1);
