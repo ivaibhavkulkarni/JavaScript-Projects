@@ -1,46 +1,107 @@
 .todo-bg-container{
     background-color: #f9fbfe;
+    font-family: "Lucida Handwriting";
     height: 100vh;
 }
 
-.todo-heading{
+.todos-heading{
+    text-align: center;
+    font-size: 46px;
+    font-weight: 500;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 
-h1{
-    font-family: "Lucida Handwriting";
+.create-task-heading{
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.create-task-subpart{
+    font-weight: 500;
+    font-size: 32;
 }
 
 
-.font-weight{
-    font-weight: 10;
-}
-
-
-.user-input{
+.todo-user-input{
     background-color: white;
     width: 100%;
     border-style: solid;
-    border-width:1px;
+    border-width: 1px;
     border-color: #e4e7eb;
-    border-radius: 15px;
+    border-radius: 12px;
     margin-top: 10px;
     padding: 15px;
+    height: 38px;
 }
 
-.todo-button{
+.add-todo-button{
     color: white;
     background-color: #4c63b6;
-    border-radius: 10px;
+    font-size: 18px;
     border-width: 0px;
-    border-color: #4c63b6;
-    padding-left: 38px;
-    padding-right: 38px;
-    padding-top: 4px;
-    padding-bottom: 5px;
-    font-size: 20px;
+    border-radius: 12px;
     margin-top: 20px;
     margin-bottom: 50px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 22px;
+}
+
+
+.task-heading{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.task-heading-subpart{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+.label-container{
+    position: relative;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #4c63b6;
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: #e4e7eb;
+    height: 38px;
+    margin-top: 10px;
+    
+}
+
+.radio-button{
+    margin-top: 24px;
+    margin-left: 0px;
+    margin-right: 10px;
+    height: 12px;
+    width: 12px;
+}
+
+.todo-item-container{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.label-text{
+    margin: 8px;
+    flex: 1;
+}
+
+
+.delete-icon-container {
+    cursor: pointer;
+    display: flex;
+    width: 16px;
+    height: 16px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
