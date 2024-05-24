@@ -1,0 +1,29 @@
+.bg-container{
+    background-color: #3a6781;
+    padding: 30px;
+    height: 100vh;
+}
+
+.heading{
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.list-container {
+    background-color: white;
+    border-radius: 16px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.delivery-text{
+    color: white;
+    font-family: "Roboto";
+    font-size: 16px;
+}
