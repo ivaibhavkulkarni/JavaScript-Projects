@@ -115,3 +115,7 @@
     margin: 8px;
     flex: 1;
 }
+
+.checked{
+    text-decoration: line-through;
+}

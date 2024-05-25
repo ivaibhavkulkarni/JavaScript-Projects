@@ -1,18 +1,10 @@
 // label_list
 
 let listTodoItems = [
-    {
-        text : "Learn HTML"
-    },
-    {
-        text : "Learn CSS"
-    },
-    {
-        text : "Learn JS"
-    }
 
 ];
 
+let todoCount = listTodoItems.length;
 
 // Function Structure
 
@@ -72,7 +64,8 @@ function createTodoStructure(){
     let inputElement  = document.createElement("input");
     inputElement.classList.add("todo-user-input")
     inputElement.type = "text";
-    inputElement.id = "todoUserInput"
+    inputElement.id = "todoUserInput";
+    inputElement.placeholder = "What needs to be done?";
     inputContainer.appendChild(inputElement);
 
 
@@ -81,6 +74,7 @@ function createTodoStructure(){
     let addButton = document.createElement("button");
     addButton.classList.add("add-todo-button");
     addButton.textContent = "Add";
+    addButton.id = "addButton";
     elementContainer.appendChild(addButton);
 
     // My Task Heading 
@@ -105,14 +99,50 @@ function createTodoStructure(){
 
 
 }
+
+// Functions for Status 
+
+function onTodoStatusChanged(checkboxId,labelid){
+    let checkboxElement = document.getElementById(checkboxId);
+    let labelElement = document.getElementById(labelid);
+    
+    if (checkboxElement.checked === true ){
+        labelElement.classList.add("checked");
+    }
+    else {
+        labelElement.classList.remove("checked");
+    }
+
+    // we can also use Toggle for above cose 
+    // labelElement.classList.toggle("checked");
+
+}
+
+// Function to delete 
+
+function onDeleteTodo(todoId){
+    let todoElement = document.getElementById(todoId);
+    todoItemContainer.removeChild(todoElement);
+}
+
+
+
 // Function for create and append Todo
 
 
 function createAndAppendTodo(todoItems){
+    
+    // Assigning Unique checkbox id  and label element 
+    let checkboxId = "checkbox" + todoItems.uniqueNo; 
+    let labelid = "label" + todoItems.uniqueNo;
+    let todoId = "todo" + todoItems.uniqueNo;
+
+
     // Creating List------------------------------------>
 
     let todoElement = document.createElement("li");
     todoElement.classList.add("todo-item-container","d-flex","flex-row")
+    todoElement.id = todoId;
     todoItemContainer.appendChild(todoElement);
 
 
@@ -120,8 +150,14 @@ function createAndAppendTodo(todoItems){
 
     let checkBox = document.createElement("input");
     checkBox.type = "checkbox";
-    checkBox.id = "CheckBox";
+    checkBox.id = checkboxId;
     checkBox.classList.add("checkbox");
+
+    // checking if the checkbox is clicked or not 
+    checkBox.onclick = function(){
+        onTodoStatusChanged(checkboxId,labelid);
+    }
+
     todoElement.appendChild(checkBox);
 
 
@@ -134,8 +170,9 @@ function createAndAppendTodo(todoItems){
     // Label 
 
     let labelElement = document.createElement("label");
-    labelElement.setAttribute("for","CheckBox")
-    labelElement.classList.add("label-text")
+    labelElement.setAttribute("for",checkboxId);
+    labelElement.classList.add("label-text");
+    labelElement.id = labelid;
     labelElement.textContent = todoItems.text;
     labelContainer.appendChild(labelElement);
 
@@ -151,7 +188,9 @@ function createAndAppendTodo(todoItems){
     deleteContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
     </svg>`
-
+    deleteContainer.onclick = function(){
+        onDeleteTodo(todoId);
+    } 
     labelContainer.appendChild(deleteContainer);
 
 
@@ -164,3 +203,25 @@ for (let items of listTodoItems){
 }
     
 
+function onAddTodo(){
+    let userInputElement = document.getElementById("todoUserInput");
+    let userInputValue = userInputElement.value;
+    todoCount = todoCount + 1;
+    if (userInputValue === ""){
+        alert("Enter a valid Input");
+        return;
+    }
+    let newTodo ={
+        text : userInputValue,
+        uniqueNo :  todoCount
+    }
+
+    createAndAppendTodo(newTodo);
+    userInputElement.value = "";
+}
+
+
+let addTodoButton = document.getElementById("addButton");
+addTodoButton.onclick = function(){
+    onAddTodo();
+}
