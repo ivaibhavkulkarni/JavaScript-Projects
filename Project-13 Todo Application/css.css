@@ -4,6 +4,21 @@
     height: 100vh;
 }
 
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
 .todos-heading{
     text-align: center;
     font-size: 46px;
@@ -12,15 +27,12 @@
     margin-bottom: 20px;
 }
 
-
-.create-task-heading{
-    font-weight: 700;
-    font-size: 32px;
+.create-text{
+    font-weight: bold;
 }
 
-.create-task-subpart{
-    font-weight: 500;
-    font-size: 32;
+.tasks-text{
+    font-weight: lighter;
 }
 
 
@@ -35,6 +47,7 @@
     padding: 15px;
     height: 38px;
 }
+
 
 .add-todo-button{
     color: white;
@@ -51,18 +64,28 @@
 }
 
 
-.task-heading{
-    font-weight: 700;
-    font-size: 20px;
+.my-text{
+    font-weight: bold;
 }
 
-.task-heading-subpart{
-    font-weight: 500;
-    font-size: 20px;
+.checkbox{
+    margin-top: 24px;
+    margin-left: 0px;
+    margin-right: 10px;
+    height: 12px;
+    width: 12px;
+
 }
 
+.todo-item-container {
+    margin-top: 15px;
+  }
+  
 
-.label-container{
+  .label-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     border-radius: 10px;
     border-width: 5px;
@@ -77,31 +100,18 @@
     
 }
 
-.radio-button{
-    margin-top: 24px;
-    margin-left: 0px;
+.delete-icon-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
     margin-right: 10px;
-    height: 12px;
-    width: 12px;
-}
-
-.todo-item-container{
-    margin: 0px;
-    padding: 0px;
 }
 
 
 .label-text{
     margin: 8px;
     flex: 1;
-}
-
-
-.delete-icon-container {
-    cursor: pointer;
-    display: flex;
-    width: 16px;
-    height: 16px;
-    margin-top: 10px;
-    margin-right: 10px;
 }
