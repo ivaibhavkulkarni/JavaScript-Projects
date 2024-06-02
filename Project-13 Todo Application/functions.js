@@ -1,14 +1,25 @@
+// Function for getting todo list from local storage
+
+function getTodoListFromLocal() {
+    let stringifiedList = localStorage.getItem("todoList");
+    let parsedTodoList = JSON.parse(stringifiedList);
+
+    if (parsedTodoList === null) {
+        return [];
+    } else {
+        return parsedTodoList;
+    }
+}
+
 // label_list
 
-let listTodoItems = [
-
-];
+let listTodoItems = getTodoListFromLocal();
 
 let todoCount = listTodoItems.length;
 
 // Function Structure
 
-function createTodoStructure(){
+function createTodoStructure() {
 
     // Main bg Container
 
@@ -25,7 +36,7 @@ function createTodoStructure(){
     // Row
 
     let Row = document.createElement("div");
-    Row.classList.add("row")
+    Row.classList.add("row");
     Container.appendChild(Row);
 
     // Elements Container 
@@ -43,7 +54,7 @@ function createTodoStructure(){
     // Create Heading 
 
     let createHeading = document.createElement("h2");
-    createHeading.classList.add("create-text","mt-4");
+    createHeading.classList.add("create-text", "mt-4");
     createHeading.textContent = "Create";
     elementContainer.appendChild(createHeading);
     // Create Heading Span
@@ -56,13 +67,13 @@ function createTodoStructure(){
     // input Container 
 
     let inputContainer = document.createElement("div");
-    inputContainer.classList.add("col-md-6","col-sm-12");
+    inputContainer.classList.add("col-md-6", "col-sm-12");
     elementContainer.appendChild(inputContainer);
 
     // input Element
 
-    let inputElement  = document.createElement("input");
-    inputElement.classList.add("todo-user-input")
+    let inputElement = document.createElement("input");
+    inputElement.classList.add("todo-user-input");
     inputElement.type = "text";
     inputElement.id = "todoUserInput";
     inputElement.placeholder = "What needs to be done?";
@@ -97,54 +108,58 @@ function createTodoStructure(){
     todoItemContainer.id = "todoItemContainer";
     elementContainer.appendChild(todoItemContainer);
 
+    // Save button
 
+    let saveButton = document.createElement("button");
+    saveButton.classList.add("add-todo-button");
+    saveButton.textContent = "Save";
+    saveButton.id = "saveButton";
+    elementContainer.appendChild(saveButton);
 }
 
 // Functions for Status 
 
-function onTodoStatusChanged(checkboxId,labelid){
+function onTodoStatusChanged(checkboxId, labelid) {
     let checkboxElement = document.getElementById(checkboxId);
     let labelElement = document.getElementById(labelid);
-    
-    if (checkboxElement.checked === true ){
+
+    if (checkboxElement.checked === true) {
         labelElement.classList.add("checked");
-    }
-    else {
+    } else {
         labelElement.classList.remove("checked");
     }
 
-    // we can also use Toggle for above cose 
+    // we can also use Toggle for above case 
     // labelElement.classList.toggle("checked");
-
 }
 
 // Function to delete 
 
-function onDeleteTodo(todoId){
+function onDeleteTodo(todoId) {
     let todoElement = document.getElementById(todoId);
+    let todoItemContainer = document.getElementById("todoItemContainer");
     todoItemContainer.removeChild(todoElement);
+
+    // Remove the item from the listTodoItems array and update local storage
+    listTodoItems = listTodoItems.filter(todo => "todo" + todo.uniqueNo !== todoId);
+    localStorage.setItem("todoList", JSON.stringify(listTodoItems));
 }
-
-
 
 // Function for create and append Todo
 
-
-function createAndAppendTodo(todoItems){
-    
-    // Assigning Unique checkbox id  and label element 
-    let checkboxId = "checkbox" + todoItems.uniqueNo; 
+function createAndAppendTodo(todoItems) {
+    // Assigning Unique checkbox id and label element 
+    let checkboxId = "checkbox" + todoItems.uniqueNo;
     let labelid = "label" + todoItems.uniqueNo;
     let todoId = "todo" + todoItems.uniqueNo;
-
 
     // Creating List------------------------------------>
 
     let todoElement = document.createElement("li");
-    todoElement.classList.add("todo-item-container","d-flex","flex-row")
+    todoElement.classList.add("todo-item-container", "d-flex", "flex-row");
     todoElement.id = todoId;
+    let todoItemContainer = document.getElementById("todoItemContainer");
     todoItemContainer.appendChild(todoElement);
-
 
     // Check box
 
@@ -154,74 +169,81 @@ function createAndAppendTodo(todoItems){
     checkBox.classList.add("checkbox");
 
     // checking if the checkbox is clicked or not 
-    checkBox.onclick = function(){
-        onTodoStatusChanged(checkboxId,labelid);
+    checkBox.onclick = function () {
+        onTodoStatusChanged(checkboxId, labelid);
     }
 
     todoElement.appendChild(checkBox);
 
-
     // Label Container
 
     let labelContainer = document.createElement("div");
-    labelContainer.classList.add("label-container","col-11","mt-2")
+    labelContainer.classList.add("label-container", "col-11", "mt-2");
     todoElement.appendChild(labelContainer);
 
     // Label 
 
     let labelElement = document.createElement("label");
-    labelElement.setAttribute("for",checkboxId);
+    labelElement.setAttribute("for", checkboxId);
     labelElement.classList.add("label-text");
     labelElement.id = labelid;
     labelElement.textContent = todoItems.text;
     labelContainer.appendChild(labelElement);
-
 
     // Delete Container and button  
 
     let deleteContainer = document.createElement("div");
     deleteContainer.classList.add("delete-icon-container");
 
-
     // delete icon link 
 
     deleteContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
     </svg>`
-    deleteContainer.onclick = function(){
+
+    deleteContainer.onclick = function () {
         onDeleteTodo(todoId);
-    } 
+    }
     labelContainer.appendChild(deleteContainer);
+}
 
+// On Add Button
 
+function onAddTodo() {
+    let userInputElement = document.getElementById("todoUserInput");
+    let userInputValue = userInputElement.value;
+    todoCount = todoCount + 1;
+    if (userInputValue === "") {
+        alert("Enter a valid Input");
+        return;
+    }
+    let newTodo = {
+        text: userInputValue,
+        uniqueNo: todoCount
+    }
+
+    listTodoItems.push(newTodo);
+    createAndAppendTodo(newTodo); // Render the new todo item
+    userInputElement.value = "";
 }
 
 createTodoStructure();
 
-for (let items of listTodoItems){
-    createAndAppendTodo(items);
+// Render the existing todos from local storage on page load
+for (let i = 0; i < listTodoItems.length; i++) {
+    let todo = listTodoItems[i];
+    createAndAppendTodo(todo);
 }
-    
-
-function onAddTodo(){
-    let userInputElement = document.getElementById("todoUserInput");
-    let userInputValue = userInputElement.value;
-    todoCount = todoCount + 1;
-    if (userInputValue === ""){
-        alert("Enter a valid Input");
-        return;
-    }
-    let newTodo ={
-        text : userInputValue,
-        uniqueNo :  todoCount
-    }
-
-    createAndAppendTodo(newTodo);
-    userInputElement.value = "";
-}
-
 
 let addTodoButton = document.getElementById("addButton");
-addTodoButton.onclick = function(){
+addTodoButton.onclick = function () {
     onAddTodo();
+}
+
+// on Clicking save Button
+
+let saveButtonElement = document.getElementById("saveButton");
+
+saveButtonElement.onclick = function () {
+    localStorage.setItem("todoList", JSON.stringify(listTodoItems));
 }
