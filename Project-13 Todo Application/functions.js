@@ -140,10 +140,24 @@ function onDeleteTodo(todoId) {
     let todoItemContainer = document.getElementById("todoItemContainer");
     todoItemContainer.removeChild(todoElement);
 
-    // Remove the item from the listTodoItems array and update local storage
-    listTodoItems = listTodoItems.filter(todo => "todo" + todo.uniqueNo !== todoId);
-    localStorage.setItem("todoList", JSON.stringify(listTodoItems));
+    // removing todo from local storage
+    let deletedTodoItemIndex = listTodoItems.findIndex(function(eachTodo) {
+        let eachTodoId = "todo" + eachTodo.uniqueNo;
+        if (eachTodoId === todoId) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+    if (deletedTodoItemIndex !== -1) {
+        listTodoItems.splice(deletedTodoItemIndex, 1);
+    }
+    
+    // Update local storage
+     localStorage.setItem("todoList", JSON.stringify(listTodoItems));
 }
+
 
 // Function for create and append Todo
 
