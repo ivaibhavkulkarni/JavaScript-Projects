@@ -119,9 +119,10 @@ function createTodoStructure() {
 
 // Functions for Status 
 
-function onTodoStatusChanged(checkboxId, labelid) {
+function onTodoStatusChanged(checkboxId, labelid,todoId) {
     let checkboxElement = document.getElementById(checkboxId);
     let labelElement = document.getElementById(labelid);
+    
 
     if (checkboxElement.checked === true) {
         labelElement.classList.add("checked");
@@ -131,6 +132,25 @@ function onTodoStatusChanged(checkboxId, labelid) {
 
     // we can also use Toggle for above case 
     // labelElement.classList.toggle("checked");
+
+    // checkbutton to local storage 
+
+    let todoItemIndex = listTodoItems.findIndex(function (eachTodo){
+        let eachTodoId = "todo" + eachTodo.uniqueNo;
+        if (eachTodoId === todoId){
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+    let todoObject = listTodoItems[todoItemIndex];
+    if (todoObject === true){
+        todoObject.isChecked = false;
+    }
+    else{
+        todoObject.isChecked = true;
+    }
 }
 
 // Function to delete 
@@ -180,11 +200,13 @@ function createAndAppendTodo(todoItems) {
     let checkBox = document.createElement("input");
     checkBox.type = "checkbox";
     checkBox.id = checkboxId;
+    checkBox.checked = todoItems.isChecked;
     checkBox.classList.add("checkbox");
 
     // checking if the checkbox is clicked or not 
     checkBox.onclick = function () {
-        onTodoStatusChanged(checkboxId, labelid);
+        onTodoStatusChanged(checkboxId, labelid,todoId);
+
     }
 
     todoElement.appendChild(checkBox);
@@ -202,6 +224,12 @@ function createAndAppendTodo(todoItems) {
     labelElement.classList.add("label-text");
     labelElement.id = labelid;
     labelElement.textContent = todoItems.text;
+
+    // checkbox
+    if (todoItems.isChecked === true){
+        labelElement.classList.add("checked");
+    }
+
     labelContainer.appendChild(labelElement);
 
     // Delete Container and button  
@@ -233,7 +261,8 @@ function onAddTodo() {
     }
     let newTodo = {
         text: userInputValue,
-        uniqueNo: todoCount
+        uniqueNo: todoCount,
+        isChecked:false
     }
 
     listTodoItems.push(newTodo);

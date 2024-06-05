@@ -1,4 +1,6 @@
-let w = [0,1,2,3,4,5];
+let lang = ["englis","hindi","telugu"];
 
-w.splice(3,3);
-console.log(w);
+let lenof = lang.push("ferrari");
+
+console.log(lenof.lastIndexOf("ferrari"));
+
