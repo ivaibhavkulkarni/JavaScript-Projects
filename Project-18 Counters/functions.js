@@ -6,62 +6,38 @@ let timerText = document.getElementById("timerText");
 
 let intervalId;
 
-function clearPreviousTimers() {
+function clearPreviousTimer(){
     clearInterval(intervalId);
+};
+
+function startTimer(duration){
+    let count = duration;
+    clearPreviousTimer(intervalId);
+    timerText.textContent = count + " seconds left";
+    intervalId = setInterval(function(){
+    if (count > 0){
+        count = count - 1;
+        timerText.textContent = count + " seconds left";
+    }
+    else{
+        timerText.textContent = "Your moment is complete";
+        clearInterval(intervalId);
+    }
+    },1000);
 }
 
-twentySecondsBtn.onclick = function() {
-    let count = 20;
-    clearPreviousTimers(intervalId);
-    timerText.textContent = count + " seconds left";
-    intervalId = setInterval(function() {
-        if (count > 0) {
-            count -= 1;
-        } else {
-            timerText.textContent = "Your moment is complete";
-            clearInterval(intervalId);
-        }
-    }, 1000);
+twentySecondsBtn.onclick = function(){
+    startTimer(20);
 };
 
-thirtySecondsBtn.onclick = function() {
-    let count = 30;
-    clearPreviousTimers(intervalId);
-    timerText.textContent = count + " seconds left";
-    intervalId = setInterval(function() {
-        if (count > 0) {
-            count -= 1;
-        } else {
-            timerText.textContent = "Your moment is complete";
-            clearInterval(intervalId);
-        }
-    }, 1000);
+thirtySecondsBtn.onclick = function(){
+    startTimer(30);
 };
 
-fortySecondsBtn.onclick = function() {
-    let count = 40;
-    clearPreviousTimers(intervalId);
-    timerText.textContent = count + " seconds left";
-    intervalId = setInterval(function() {
-        if (count > 0) {
-            count -= 1;
-        } else {
-            timerText.textContent = "Your moment is complete";
-            clearInterval(intervalId);
-        }
-    }, 1000);
+fortySecondsBtn.onclick = function(){
+    startTimer(40);
 };
 
-oneMinuteBtn.onclick = function() {
-    let count = 60;
-    clearPreviousTimers(intervalId);
-    timerText.textContent = count + " seconds left";
-    intervalId = setInterval(function() {
-        if (count > 0) {
-            count -= 1;
-        } else {
-            timerText.textContent = "Your moment is complete";
-            clearInterval(intervalId);
-        }
-    }, 1000);
+oneMinuteBtn.onclick = function(){
+    startTimer(60);
 };
