@@ -13,12 +13,12 @@ function createAndAppend(country) {
     countryEl.appendChild(countryFlagEl);
 
     let countryInfoEl = document.createElement("div");
-    countryInfoEl.classList.add("d-flex", "flex-column", "ml-4");
+    countryInfoEl.classList.add("d-flex", "flex-column", "ml-4","p-2");
     countryEl.appendChild(countryInfoEl);
 
     let countryNameEl = document.createElement("p");
     countryNameEl.textContent = country.name;
-    countryNameEl.classList.add("country-name");
+    countryNameEl.classList.add("country-name",);
     countryInfoEl.appendChild(countryNameEl);
 
     let countryPopulationEl = document.createElement("p");
