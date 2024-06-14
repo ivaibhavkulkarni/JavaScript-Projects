@@ -16,6 +16,7 @@ let workingStatus = document.getElementById("status");
 let genderMale = document.getElementById("genderMale");
 let genderFemale = document.getElementById("genderFemale");
 
+
 function submitFormData(formData){
     
     let option = {
@@ -35,9 +36,10 @@ function submitFormData(formData){
         })
         .then(function (jsonData){
             console.log(jsonData);
-            if (jsonData[0].message === "has already been taken"){
+            if (jsonData.code === 422){
+                if (jsonData[0].message === "has already been taken" && jsonData.data[0].field === "email"){
                 emailER.textContent = "Email Already Exists.";
-            }
+            }}
         });
 }
 
@@ -48,24 +50,32 @@ myForm.addEventListener("submit",function(event){
 });
 
 
-nameEl.addEventListener("change",function(event){
+nameEl.addEventListener("blur",function(event){
     if (event.target.value === ""){
         nameER.textContent = "Required*";
     }
     else{
         nameER.textContent = "";
     }
-    formData.name = event.target.value;
+
 })
 
+nameEl.addEventListener("change",function(event){
+    formData.name = event.target.value;
+});
 
-emailEl.addEventListener("change",function(event){
+
+
+emailEl.addEventListener("blur",function(event){
     if (event.target.value === ""){
         emailER.textContent = "Required*";
     }
     else{
         emailER.textContent = "";
-    }
+    } 
+});
+
+emailEl.addEventListener("change",function(event){
     formData.email = event.target.value;
 });
 
