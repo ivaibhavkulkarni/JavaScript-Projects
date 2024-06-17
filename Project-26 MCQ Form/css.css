@@ -1,0 +1,31 @@
+.bg-container {
+    background-color: #EC7063;
+    height: 100vh;
+}
+
+.heading {
+    font-family: "Roboto";
+    color: white;
+    text-align: center;
+}
+
+.heading2 {
+    font-family: "Bree Serif";
+    font-size: 28px;
+}
+
+.white-container {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px;
+}
+
+.error {
+    color: red;
+    font-family: "Bree Serif";
+}
+
+.correct {
+    color: green;
+    font-family: "Bree Serif";
+}
