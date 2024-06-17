@@ -24,7 +24,7 @@ function submitFormData(formData){
         headers : {
             "Content-Type" : "application/json",
             "Accept" : "application/json",
-            "Authorization" : "Bearer 1018df7ac080ef5bf18dc890c8674cb30a2da1624c32c5316aa07adc6e75b57c"
+            "Authorization" : "Bearer 1018df7----------------------------------------------------------"
         },
         body:JSON.stringify(formData)
     };
