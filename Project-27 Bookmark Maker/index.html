@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="bg-container">
+        <div class="container pt-3">
+            <p class="hello">Hello</p>
+            <h1 class="name-el">User</h1>
+            <div class="row col-12 col-md-10 col-lg-8 white-container p-4">
+                <form id="bookmarkForm">
+                    <h1 class="book-mark">Bookmark Your Favorite Sites</h1>
+                    <div class="grey-card">
+                        <div class="p-3">
+                            <label for="siteNameInput" class="label">SITE NAME</label>
+                            <input class="form-control" id="siteNameInput">
+                            <p id="siteNameErrMsg" class="error"></p>
+                        </div>
+                        <div class="p-3">
+                            <label for="siteUrlInput" class="label">SITE URL</label>
+                            <input class="form-control" id="siteUrlInput">
+                            <p id="siteUrlErrMsg" class="error"></p>
+                        </div>
+                        <div class="p-3 d-flex flex-row justify-content-end">
+                            <button id="submitBtn" class="btn btn-primary button" type="submit">Submit</button>
+                        </div>
+                    </div>
+                    <div id="bookmarkDiv" class="d-none">
+                        <h2 class="book-mark pt-4">Bookmarks</h2>
+                        <ul class="grey-card mt-4 p-3" id="bookmarksList">
+                        </ul>
+                    </div> 
+                    <div class="pt-4">
+                        <svg id="showBookmarksBtn" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z"/>
+                            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+                          </svg>
+                    </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <script src="function.js"></script>
+</body>
+</html>
+

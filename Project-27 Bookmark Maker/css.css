@@ -1,0 +1,68 @@
+
+.bg-container {
+    background-image: linear-gradient(to left,#F2F3F4,#273746);
+    font-family: "Roboto";
+    min-height: 100vh;
+}
+
+.hello {
+    color: white;
+    font-size: 25px;
+}
+
+.name-el {
+    color: white;
+    font-weight: 100;
+}
+
+.white-container {
+    background-color: white;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.book-mark {
+    color: #323f4b;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+.grey-card {
+    background-color: #f5f7fa;
+    border-radius: 18px;
+    border-color: #cbd2d9;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.label {
+    color: #7b8794;
+    font-size: 12px;
+}
+
+.button {
+    color: white;
+    background-color: #21396c;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 12px;
+}
+
+.result-heading {
+    color: #21396c;
+    font-size: 20px;
+}
+
+.site-heading{
+    color: #21396c;
+}
+
+
+.remove-dot{
+    list-style-type: none;
+    padding-left: 0;
+}
