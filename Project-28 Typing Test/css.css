@@ -1,0 +1,37 @@
+
+.bg-container {
+    background-image: linear-gradient(to right, #F5EEF8, #A569BD);
+    height: 100vh;
+    width: auto;
+}
+
+.heading {
+    color: white;
+}
+
+.image {
+    height: 100px;
+    width: 100px;
+}
+
+.seconds {
+    font-size: 18px;
+}
+
+.text-container {
+    background-color: #f2ebfe;
+    border-color: #9aa5b1;
+    border-radius: 10px;
+    border-width: 3px;
+    color: #3e4c59;
+    font-weight: 500;
+}
+
+.button1{
+    background-color: #690cb0 !important;
+    color: white !important;
+}
+
+.timer{
+    font-size: 30px;
+}
