@@ -20,7 +20,7 @@ function startTimer() {
 
 
 function getRandomQuote() {
-    let apiKey = "H4ngx+RSSJYLs5I4cVKZuQ==gxUpzED9rcbA9Itj";
+    let apiKey = "URL";
     let option = {
         method: "GET",
         headers: {
