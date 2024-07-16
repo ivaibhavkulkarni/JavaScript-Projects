@@ -1,0 +1,37 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.background{
+    text-align: right;
+    height: 100vh;
+    background-image: url("https://assets.ccbp.in/frontend/intermediate-rwd/dream-car-bg.png");
+    background-size: cover;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.h1{
+    color: #ffffff;
+    font-family: "Roboto";
+}
+
+.p{
+    color: #ffffff;
+    font-family: "Roboto";
+}
+
+.speed-logo{
+    height: 60px;
+    width: 60px;
+}
+
+
