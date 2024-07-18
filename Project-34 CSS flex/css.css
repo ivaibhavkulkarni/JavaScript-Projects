@@ -1,0 +1,73 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+    background-image: linear-gradient(to right,black,grey);
+    
+}
+.logo{
+    height: 40px;
+    padding-left: 10px;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-item{
+    margin: 8px;
+    color: white;
+    font-family: "Roboto";
+}
+
+.background{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction:row;
+    padding: 5px;
+}
+
+.para1div{
+    align-self: center;
+}
+
+
+.para1{
+    color: white;
+    font-family: "Roboto";
+}
+
+
+
+
+.img{
+    width: 500px;
+}
+
+.para2div{
+    align-self: flex-end;
+}
+
+.para2{
+    color: #9aa5b1;
+    font-family: "Roboto";
+}
+
+.para0div{
+    align-self: flex-start;
+}
+
+
